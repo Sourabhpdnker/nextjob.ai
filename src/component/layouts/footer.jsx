@@ -23,12 +23,12 @@ const Footer = () => {
             </li>
             <li>
               <a href="#" className="hover:text-blue-400">
-                Features
+                Message
               </a>
             </li>
             <li>
               <a href="#" className="hover:text-blue-400">
-                Pricing
+                Blogs
               </a>
             </li>
             <li>
@@ -68,7 +68,7 @@ const Footer = () => {
               className="w-full p-2 rounded-l-lg text-gray-900 focus:outline-none"
             />
             <button className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-r-lg text-white">
-              Subscribe
+              Resume-Builder
             </button>
           </div>
         </div>
@@ -77,7 +77,8 @@ const Footer = () => {
       <hr className="border-gray-700 my-10" />
 
       <p className="text-center text-gray-500">
-        &copy; {new Date().getFullYear()} ResumeCraft. All Rights Reserved.
+        &copy; {new Date().getFullYear()} ResumeCraft. All Rights Reserved. made
+        by team DOMinators
       </p>
     </footer>
   );
