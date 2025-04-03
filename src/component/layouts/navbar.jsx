@@ -4,8 +4,8 @@ import React from "react";
 
 function Navbar() {
   return (
-    <header className="rounded-2xl mt-10 pt-1.5 text-white-100 sticky top-2 z-50 bg-gradient-to-r from-blue-950 via-violet-700 to-blue-900 body-font">
-      <div className="rounded-2xl container pt-2 mt-10 mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
+    <header className="rounded-2xl text-white-100 sticky top-0 z-50 bg-gradient-to-r from-blue-950 via-violet-700 to-blue-900 body-font">
+      <div className="rounded-2xl container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
         <Link
           href="/"
           className="flex title-font font-extrabold items-center uppercase text-gray-100"

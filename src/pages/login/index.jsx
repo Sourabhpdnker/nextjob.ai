@@ -1,37 +1,46 @@
-// src/pages/login/index.jsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import Link from "next/link"; // Import Link correctly
+import Link from "next/link";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
   const { data: session } = useSession();
   const router = useRouter();
 
-  if (session) {
-    router.push("/home");
-    return null;
-  }
+  useEffect(() => {
+    if (session) router.push("/home");
+  }, [session]);
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setError(""); // Clear previous errors
 
-    const res = await signIn("credentials", { ...form, redirect: false });
+    const res = await signIn("credentials", {
+      ...form,
+      redirect: false,
+    });
 
-    if (res.error) {
-      alert(res.error); // Show error if authentication fails
+    if (res?.error) {
+      setError(res.error);
     } else {
-      router.push("/home"); // Redirect to home page after successful login
+      router.push("/home");
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-blue-500">
+    <div className="min-h-screen mt-0 flex items-center justify-center bg-blue-500">
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Login
         </h2>
+
+        {error && (
+          <div className="mb-4 p-2 bg-red-100 text-red-700 text-sm rounded">
+            {error}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -78,9 +87,8 @@ export default function Login() {
 
         <p className="mt-4 text-center text-sm text-gray-600">
           Don't have an account?{" "}
-          <Link href="/signup">
-            <span className="text-blue-500">Sign Up</span>{" "}
-            {/* No <a> tag needed */}
+          <Link href="/signup" className="text-blue-500 hover:underline">
+            Sign Up
           </Link>
         </p>
       </div>
