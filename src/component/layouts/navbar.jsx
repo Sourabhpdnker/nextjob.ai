@@ -4,7 +4,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <header className="rounded-2xl text-white-100 sticky top-0 z-50 bg-gradient-to-r from-blue-950 via-violet-700 to-blue-900 body-font">
+    <header className="rounded-2xl mt-1 text-white-100 sticky top-0 z-50 bg-gradient-to-r from-blue-950 via-violet-700 to-blue-900 body-font">
       <div className="rounded-2xl container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
         <Link
           href="/"
@@ -16,34 +16,35 @@ function Navbar() {
 
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <Link
-            href="/cart"
+            href="/About"
             className="text-white mr-5 cursor-pointer hover:text-gray-200 flex items-center"
           >
-            Cart
+            About
           </Link>
           <Link
-            href="/admin"
+            href="/home"
             className="text-white mr-5 cursor-pointer hover:text-gray-200 flex items-center"
           >
-            Admin
+            Home
           </Link>
           <Link
-            href="/orders"
+            href="/contact"
             className="text-white mr-5 cursor-pointer hover:text-gray-200 flex items-center"
           >
-            My Orders
+            Contact
           </Link>
           <Link
-            href="/login"
+            href="/message"
             className="text-white mr-5 cursor-pointer hover:text-gray-200 flex items-center"
           >
-            Login
+            Message
           </Link>
+
           <Link
-            href="/signup"
+            href="/blog"
             className="text-white mr-5 cursor-pointer hover:text-gray-200 flex items-center"
           >
-            Signup
+            Blogs
           </Link>
         </nav>
       </div>
